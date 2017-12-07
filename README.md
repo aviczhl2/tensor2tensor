@@ -41,6 +41,17 @@ pip install tensor2tensor && t2t-trainer \
   --output_dir=~/t2t_train/base
 ```
 
+current code(run directly instead of installation from pip)
+
+train:
+
+CUDA_VISIBLE_DEVICES=2 python3 -m tensor2tensor.bin.t2t-trainer --generate_data --data_dir=t2t_data2 --problems=translate_enzh_wmt8k --model=transformer --hparams_set=transformer_base_single_gpu --output_dir=t2t_train/base_enzh
+
+Eval:
+
+CUDA_VISIBLE_DEVICES=1 python3 -m tensor2tensor.bin.t2t-decoder --data_dir=t2t_data --problems=translate_ende_wmt32k --model=transformer --hparams_set=transformer_base_single_gpu --output_dir=t2t_train/base --decode_interactive
+
+
 You can decode from the model interactively:
 
 ```
