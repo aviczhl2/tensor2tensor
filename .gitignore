@@ -1,6 +1,8 @@
 # Compiled python modules.
 *.pyc
-
+t2t_data/
+t2t_data2/
+t2t_train/
 # Byte-compiled
 _pycache__/
 .cache/

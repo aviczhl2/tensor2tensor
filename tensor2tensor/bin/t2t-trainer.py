@@ -50,7 +50,7 @@ flags.DEFINE_string("t2t_usr_dir", "",
                     "The imported files should contain registrations, "
                     "e.g. @registry.register_model calls, that will then be "
                     "available to the t2t-trainer.")
-flags.DEFINE_string("tmp_dir", "/tmp/t2t_datagen",
+flags.DEFINE_string("tmp_dir", "/scratch/xz585/t2t_datagen",
                     "Temporary storage directory.")
 flags.DEFINE_bool("generate_data", False, "Generate data before training?")
 
