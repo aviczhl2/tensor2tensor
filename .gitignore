@@ -3,6 +3,8 @@
 t2t_data/
 t2t_data2/
 t2t_train/
+
+._DS_store
 # Byte-compiled
 _pycache__/
 .cache/
