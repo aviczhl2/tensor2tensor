@@ -894,8 +894,9 @@ class T2TModel(base.Layer):
     infer_out = self.infer(
         features,
         beam_size=decode_hparams.beam_size,
+       
         top_beams=(
-            decode_hparams.beam_size if decode_hparams.return_beams else 1),
+            decode_hparams.num_return if decode_hparams.return_beams else 1),
         alpha=decode_hparams.alpha,
         decode_length=decode_hparams.extra_length)
     if isinstance(infer_out, dict):
