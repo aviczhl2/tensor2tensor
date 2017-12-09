@@ -46,7 +46,7 @@ def decode_hparams(overrides=""):
       problem_idx=0,
       extra_length=50,
       batch_size=0,
-      beam_size=80,
+      beam_size=100,
       alpha=0.6,
       return_beams=True,
       num_return=6,
@@ -235,7 +235,8 @@ def decode_from_file(estimator, filename, decode_hp, decode_to_file=None):
   for result in result_iter:
     if decode_hp.return_beams:
       beam_decodes = []
-      output_beams = np.split(result["outputs"], decode_hp.num_return, axis=0)
+      output_beams = np.split(result["outputs"], decode_hp.beam_size, axis=0)
+      output_beams=output_beams[0:decode_hp.num_return]
       for k, beam in enumerate(output_beams):
         tf.logging.info("BEAM %d:" % k)
         decoded_outputs, _ = log_decode_results(result["inputs"], beam,
