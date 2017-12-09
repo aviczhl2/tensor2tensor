@@ -243,7 +243,7 @@ def decode_from_file(estimator, filename, decode_hp, decode_to_file=None):
                                                 problem_name, None,
                                                 inputs_vocab, targets_vocab)
         beam_decodes.append(decoded_outputs)
-      decodes.append("\t".join(beam_decodes))
+      decodes.append("\n".join(beam_decodes))
     else:
       decoded_outputs, _ = log_decode_results(result["inputs"],
                                               result["outputs"], problem_name,
@@ -332,7 +332,7 @@ def decode_interactively(estimator, decode_hp):
           tf.logging.info("\"%s\"" % beam_string)
     else:
       if decode_hp.identity_output:
-        tf.logging.info(" ".join(map(str, result["outputs"].flatten())))
+        tf.logging.info("".join(map(str, result["outputs"].flatten())))
       else:
         tf.logging.info(
             targets_vocab.decode(_save_until_eos(result["outputs"], is_image)))
