@@ -204,7 +204,7 @@ def decode_from_dataset(estimator,
 def decode_from_file(estimator, filename, decode_hp, decode_to_file=None):
   """Compute predictions on entries in filename and write them out."""
   if not decode_hp.batch_size:
-    decode_hp.batch_size = 32
+    decode_hp.batch_size = 16
     tf.logging.info(
         "decode_hp.batch_size not specified; default=%d" % decode_hp.batch_size)
 
