@@ -46,10 +46,10 @@ def decode_hparams(overrides=""):
       problem_idx=0,
       extra_length=50,
       batch_size=0,
-      beam_size=100,
+      beam_size=75,
       alpha=0.6,
       return_beams=True,
-      num_return=10,
+      num_return=2,
       max_input_size=-1,
       identity_output=False,
       num_samples=-1,
@@ -204,7 +204,7 @@ def decode_from_dataset(estimator,
 def decode_from_file(estimator, filename, decode_hp, decode_to_file=None):
   """Compute predictions on entries in filename and write them out."""
   if not decode_hp.batch_size:
-    decode_hp.batch_size = 1
+    decode_hp.batch_size = 8
     tf.logging.info(
         "decode_hp.batch_size not specified; default=%d" % decode_hp.batch_size)
 
