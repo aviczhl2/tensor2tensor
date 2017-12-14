@@ -14,12 +14,12 @@ import pandas as pd
 
 
 
-file=open('context.txt','rb')
+file=open('context.txt','r',encoding='utf8')
 w=file.readlines()
 ignored=[]
 tobe_translated=[]
 for j in range(len(w)):
-    line=str(w[j])[2:-3]
+    line=w[j]
     if len(line)>0 and line[0]==' ':
         line=line[1:]
     split=line.split(' ')
