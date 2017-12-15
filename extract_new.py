@@ -14,7 +14,7 @@ import pandas as pd
 
 
 
-file=open('context.txt','r',encoding='utf8')
+file=open('context2.txt','r',encoding='utf8')
 w=file.readlines()
 ignored=[]
 tobe_translated=[]
@@ -28,10 +28,10 @@ for j in range(len(w)):
     else:
         tobe_translated.append(line)
 
-f2=open('translate.txt','w')
+f2=open('translate2.txt','w')
 for sentence in tobe_translated:
-    f2.write(sentence+'\n')
-f3=open('ignorelist.txt','w')
+    f2.write(sentence)
+f3=open('ignorelist_2.txt','w')
 for ii in ignored:
     print("%4d "%ii,file=f3)
 
